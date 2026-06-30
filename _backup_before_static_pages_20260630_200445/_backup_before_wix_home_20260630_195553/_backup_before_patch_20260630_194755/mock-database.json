@@ -1,0 +1,659 @@
+{
+  "config": {
+    "siteName": "Piller Metal",
+    "headline": "Fechaduras e cadeados com identidade Piller",
+    "subheadline": "Base editável inspirada no site original, com produtos, popups, botões, HTML customizado e mock database local.",
+    "primaryColor": "#072b61",
+    "secondaryColor": "#f5b51b",
+    "accentColor": "#0d4f9a",
+    "backgroundImage": "assets/screenshots/021_1782839081.png",
+    "logoImage": "https://static.wixstatic.com/media/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png/v1/fill/w_125,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png",
+    "footerText": "Piller Metal — sistema editável estático para Vercel/Netlify.",
+    "whatsapp": "5522999999999"
+  },
+  "categories": [
+    {
+      "id": "cadeados",
+      "title": "Cadeados",
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "cilindros-de-reposi-o",
+      "title": "Cilindros de Reposição",
+      "visible": true,
+      "order": 2
+    },
+    {
+      "id": "cadeados-coloridos",
+      "title": "Cadeados Coloridos",
+      "visible": true,
+      "order": 3
+    },
+    {
+      "id": "fechaduras-de-vidro",
+      "title": "Fechaduras de Vidro",
+      "visible": true,
+      "order": 4
+    },
+    {
+      "id": "fechaduras-linha-perfil",
+      "title": "Fechaduras Linha Perfil",
+      "visible": true,
+      "order": 5
+    },
+    {
+      "id": "ma-anetas-linha-genebra",
+      "title": "Maçanetas Linha Genebra",
+      "visible": true,
+      "order": 6
+    }
+  ],
+  "products": [
+    {
+      "id": "cadeado-20mm",
+      "category": "Cadeados",
+      "title": "Cadeado 20mm",
+      "subtitle": "Cadeados",
+      "image": "https://static.wixstatic.com/media/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png/v1/fill/w_125,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 1
+    },
+    {
+      "id": "cadeado-25mm",
+      "category": "Cadeados",
+      "title": "Cadeado 25mm",
+      "subtitle": "Cadeados",
+      "image": "https://static.wixstatic.com/media/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png/v1/fill/w_250,h_160,al_c,lg_1,q_85,enc_avif,quality_auto/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 2
+    },
+    {
+      "id": "cadeado-30mm",
+      "category": "Cadeados",
+      "title": "Cadeado 30mm",
+      "subtitle": "Cadeados",
+      "image": "https://static.wixstatic.com/media/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png/v1/fill/w_37,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 3
+    },
+    {
+      "id": "cadeado-35mm",
+      "category": "Cadeados",
+      "title": "Cadeado 35mm",
+      "subtitle": "Cadeados",
+      "image": "https://static.wixstatic.com/media/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png/v1/fill/w_74,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 4
+    },
+    {
+      "id": "cadeado-40mm",
+      "category": "Cadeados",
+      "title": "Cadeado 40mm",
+      "subtitle": "Cadeados",
+      "image": "https://static.wixstatic.com/media/11062b_ef6a6ac194704911951645990055c2ce~mv2.png/v1/fill/w_37,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_ef6a6ac194704911951645990055c2ce~mv2.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 5
+    },
+    {
+      "id": "cadeado-45mm",
+      "category": "Cadeados",
+      "title": "Cadeado 45mm",
+      "subtitle": "Cadeados",
+      "image": "https://static.wixstatic.com/media/11062b_ef6a6ac194704911951645990055c2ce~mv2.png/v1/fill/w_74,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_ef6a6ac194704911951645990055c2ce~mv2.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 6
+    },
+    {
+      "id": "cadeado-50mm",
+      "category": "Cadeados",
+      "title": "Cadeado 50mm",
+      "subtitle": "Cadeados",
+      "image": "https://static.wixstatic.com/media/11062b_b5690303a8ff470e9b1c03a24aff140b~mv2.png/v1/fill/w_37,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_b5690303a8ff470e9b1c03a24aff140b~mv2.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 7
+    },
+    {
+      "id": "cadeado-60mm",
+      "category": "Cadeados",
+      "title": "Cadeado 60mm",
+      "subtitle": "Cadeados",
+      "image": "https://static.wixstatic.com/media/11062b_b5690303a8ff470e9b1c03a24aff140b~mv2.png/v1/fill/w_74,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_b5690303a8ff470e9b1c03a24aff140b~mv2.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 8
+    },
+    {
+      "id": "cilindro-500",
+      "category": "Cilindros de Reposição",
+      "title": "Cilindro 500",
+      "subtitle": "Cilindros de Reposição",
+      "image": "https://static.wixstatic.com/media/396ecb_b4118d6c534c4d02905403a39d7a8c41~mv2.png/v1/crop/x_443,y_19,w_357,h_164/fill/w_284,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Postagens%20Piller%202024.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 9
+    },
+    {
+      "id": "cilindro-510",
+      "category": "Cilindros de Reposição",
+      "title": "Cilindro 510",
+      "subtitle": "Cilindros de Reposição",
+      "image": "https://static.wixstatic.com/media/396ecb_b4118d6c534c4d02905403a39d7a8c41~mv2.png/v1/crop/x_443,y_19,w_357,h_164/fill/w_494,h_230,al_c,lg_1,q_85,enc_avif,quality_auto/Postagens%20Piller%202024.png",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 10
+    },
+    {
+      "id": "cilindro-520",
+      "category": "Cilindros de Reposição",
+      "title": "Cilindro 520",
+      "subtitle": "Cilindros de Reposição",
+      "image": "https://static.wixstatic.com/media/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg/v1/fill/w_948,h_963,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 11
+    },
+    {
+      "id": "cilindro-525",
+      "category": "Cilindros de Reposição",
+      "title": "Cilindro 525",
+      "subtitle": "Cilindros de Reposição",
+      "image": "https://static.wixstatic.com/media/396ecb_22fa2c788c3345a3824cf521a0b54ff6~mv2.jpg/v1/fill/w_1901,h_963,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/396ecb_22fa2c788c3345a3824cf521a0b54ff6~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 12
+    },
+    {
+      "id": "cilindro-526",
+      "category": "Cilindros de Reposição",
+      "title": "Cilindro 526",
+      "subtitle": "Cilindros de Reposição",
+      "image": "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_377,h_566,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 13
+    },
+    {
+      "id": "cilindro-627st-h",
+      "category": "Cilindros de Reposição",
+      "title": "Cilindro 627ST/H",
+      "subtitle": "Cilindros de Reposição",
+      "image": "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_754,h_1132,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 14
+    },
+    {
+      "id": "cadeado-colorido-azul",
+      "category": "Cadeados Coloridos",
+      "title": "Cadeado Colorido Azul",
+      "subtitle": "Cadeados Coloridos",
+      "image": "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_1131,h_1698,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 15
+    },
+    {
+      "id": "cadeado-colorido-vermelho",
+      "category": "Cadeados Coloridos",
+      "title": "Cadeado Colorido Vermelho",
+      "subtitle": "Cadeados Coloridos",
+      "image": "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_1508,h_2264,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 16
+    },
+    {
+      "id": "cadeado-colorido-amarelo",
+      "category": "Cadeados Coloridos",
+      "title": "Cadeado Colorido Amarelo",
+      "subtitle": "Cadeados Coloridos",
+      "image": "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_1885,h_2830,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 17
+    },
+    {
+      "id": "cadeado-colorido-preto",
+      "category": "Cadeados Coloridos",
+      "title": "Cadeado Colorido Preto",
+      "subtitle": "Cadeados Coloridos",
+      "image": "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_377,h_377,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 18
+    },
+    {
+      "id": "fechadura-para-porta-de-vidro",
+      "category": "Fechaduras de Vidro",
+      "title": "Fechadura para Porta de Vidro",
+      "subtitle": "Fechaduras de Vidro",
+      "image": "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_754,h_754,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 19
+    },
+    {
+      "id": "fechadura-bico-de-papagaio",
+      "category": "Fechaduras de Vidro",
+      "title": "Fechadura Bico de Papagaio",
+      "subtitle": "Fechaduras de Vidro",
+      "image": "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_1131,h_1131,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 20
+    },
+    {
+      "id": "fechadura-vidro-central",
+      "category": "Fechaduras de Vidro",
+      "title": "Fechadura Vidro Central",
+      "subtitle": "Fechaduras de Vidro",
+      "image": "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_1508,h_1508,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 21
+    },
+    {
+      "id": "fechadura-vidro-lateral",
+      "category": "Fechaduras de Vidro",
+      "title": "Fechadura Vidro Lateral",
+      "subtitle": "Fechaduras de Vidro",
+      "image": "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_1885,h_1885,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 22
+    },
+    {
+      "id": "perfil-estreito-espelho-repuxado-20mm",
+      "category": "Fechaduras Linha Perfil",
+      "title": "Perfil Estreito - Espelho Repuxado 20mm",
+      "subtitle": "Fechaduras Linha Perfil",
+      "image": "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_377,h_565,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 23
+    },
+    {
+      "id": "perfil-estreito-espelho-repuxado-28mm",
+      "category": "Fechaduras Linha Perfil",
+      "title": "Perfil Estreito - Espelho Repuxado 28mm",
+      "subtitle": "Fechaduras Linha Perfil",
+      "image": "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_754,h_1130,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 24
+    },
+    {
+      "id": "perfil-plano-bola-20mm",
+      "category": "Fechaduras Linha Perfil",
+      "title": "Perfil Plano Bola 20mm",
+      "subtitle": "Fechaduras Linha Perfil",
+      "image": "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_1131,h_1695,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 25
+    },
+    {
+      "id": "perfil-plano-bola-28mm",
+      "category": "Fechaduras Linha Perfil",
+      "title": "Perfil Plano Bola 28mm",
+      "subtitle": "Fechaduras Linha Perfil",
+      "image": "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_1508,h_2260,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 26
+    },
+    {
+      "id": "ma-aneta-genebra-cromada",
+      "category": "Maçanetas Linha Genebra",
+      "title": "Maçaneta Genebra Cromada",
+      "subtitle": "Maçanetas Linha Genebra",
+      "image": "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_1885,h_2825,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 27
+    },
+    {
+      "id": "ma-aneta-genebra-branca",
+      "category": "Maçanetas Linha Genebra",
+      "title": "Maçaneta Genebra Branca",
+      "subtitle": "Maçanetas Linha Genebra",
+      "image": "https://static.wixstatic.com/media/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg/v1/fit/w_377,h_189,q_90,enc_avif,quality_auto/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 28
+    },
+    {
+      "id": "ma-aneta-genebra-preta",
+      "category": "Maçanetas Linha Genebra",
+      "title": "Maçaneta Genebra Preta",
+      "subtitle": "Maçanetas Linha Genebra",
+      "image": "https://static.wixstatic.com/media/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg/v1/fit/w_754,h_378,q_90,enc_avif,quality_auto/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 29
+    },
+    {
+      "id": "conjunto-genebra-completo",
+      "category": "Maçanetas Linha Genebra",
+      "title": "Conjunto Genebra Completo",
+      "subtitle": "Maçanetas Linha Genebra",
+      "image": "https://static.wixstatic.com/media/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg/v1/fit/w_1131,h_567,q_90,enc_avif,quality_auto/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg",
+      "shortDescription": "Produto Piller configurável. Edite este texto no painel administrativo.",
+      "details": [
+        "Informações técnicas editáveis pelo painel.",
+        "Aplicações, medidas, normas e matéria-prima podem ser alteradas.",
+        "Popup próprio funcionando fora do Wix."
+      ],
+      "visible": true,
+      "order": 30
+    }
+  ],
+  "blocks": [
+    {
+      "id": "html-home",
+      "title": "Bloco HTML inicial",
+      "type": "html",
+      "content": "<strong>Área editável:</strong> cole aqui HTML simples, tabelas ou textos técnicos. Scripts são removidos por segurança.",
+      "enabled": true,
+      "order": 1
+    },
+    {
+      "id": "texto-institucional",
+      "title": "Institucional",
+      "type": "text",
+      "content": "A Piller trabalha com soluções para fechaduras, cadeados e acessórios. Este texto é mockado e pode ser substituído no editor.",
+      "enabled": true,
+      "order": 2
+    }
+  ],
+  "buttons": [
+    {
+      "id": "btn-produtos",
+      "label": "Ver Produtos",
+      "targetType": "internal",
+      "target": "#produtos",
+      "x": 8,
+      "y": 70,
+      "width": 170,
+      "enabled": true,
+      "order": 1
+    },
+    {
+      "id": "btn-representantes",
+      "label": "Representantes",
+      "targetType": "popup",
+      "target": "representantes",
+      "x": 26,
+      "y": 70,
+      "width": 190,
+      "enabled": true,
+      "order": 2
+    },
+    {
+      "id": "btn-contato",
+      "label": "WhatsApp",
+      "targetType": "whatsapp",
+      "target": "Olá, gostaria de mais informações sobre os produtos Piller.",
+      "x": 47,
+      "y": 70,
+      "width": 150,
+      "enabled": true,
+      "order": 3
+    }
+  ],
+  "representatives": [
+    {
+      "state": "Rio de Janeiro",
+      "name": "Representante RJ",
+      "phone": "(22) 0000-0000",
+      "email": "representante-rj@exemplo.com"
+    },
+    {
+      "state": "São Paulo",
+      "name": "Representante SP",
+      "phone": "(11) 0000-0000",
+      "email": "representante-sp@exemplo.com"
+    },
+    {
+      "state": "Bahia",
+      "name": "Representante BA",
+      "phone": "(71) 0000-0000",
+      "email": "representante-ba@exemplo.com"
+    }
+  ],
+  "imageLibrary": [
+    "https://static.wixstatic.com/media/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png/v1/fill/w_125,h_80,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png",
+    "https://static.wixstatic.com/media/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png/v1/fill/w_250,h_160,al_c,lg_1,q_85,enc_avif,quality_auto/8a4bd2_a3b5399bd04e4bf7be930aa328ea7a0b~mv2.png",
+    "https://static.wixstatic.com/media/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png/v1/fill/w_37,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png",
+    "https://static.wixstatic.com/media/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png/v1/fill/w_74,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png",
+    "https://static.wixstatic.com/media/11062b_ef6a6ac194704911951645990055c2ce~mv2.png/v1/fill/w_37,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_ef6a6ac194704911951645990055c2ce~mv2.png",
+    "https://static.wixstatic.com/media/11062b_ef6a6ac194704911951645990055c2ce~mv2.png/v1/fill/w_74,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_ef6a6ac194704911951645990055c2ce~mv2.png",
+    "https://static.wixstatic.com/media/11062b_b5690303a8ff470e9b1c03a24aff140b~mv2.png/v1/fill/w_37,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_b5690303a8ff470e9b1c03a24aff140b~mv2.png",
+    "https://static.wixstatic.com/media/11062b_b5690303a8ff470e9b1c03a24aff140b~mv2.png/v1/fill/w_74,h_74,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_b5690303a8ff470e9b1c03a24aff140b~mv2.png",
+    "https://static.wixstatic.com/media/396ecb_b4118d6c534c4d02905403a39d7a8c41~mv2.png/v1/crop/x_443,y_19,w_357,h_164/fill/w_284,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Postagens%20Piller%202024.png",
+    "https://static.wixstatic.com/media/396ecb_b4118d6c534c4d02905403a39d7a8c41~mv2.png/v1/crop/x_443,y_19,w_357,h_164/fill/w_494,h_230,al_c,lg_1,q_85,enc_avif,quality_auto/Postagens%20Piller%202024.png",
+    "https://static.wixstatic.com/media/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg/v1/fill/w_948,h_963,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_22fa2c788c3345a3824cf521a0b54ff6~mv2.jpg/v1/fill/w_1901,h_963,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/396ecb_22fa2c788c3345a3824cf521a0b54ff6~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_377,h_566,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_754,h_1132,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_1131,h_1698,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_1508,h_2264,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_1885,h_2830,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_377,h_377,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_754,h_754,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_1131,h_1131,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_1508,h_1508,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg/v1/fit/w_1885,h_1885,q_90,enc_avif,quality_auto/396ecb_4f4b0df22ab64cb79cf11c3a1f8d55f7~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_377,h_565,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_754,h_1130,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_1131,h_1695,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_1508,h_2260,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg/v1/fit/w_1885,h_2825,q_90,enc_avif,quality_auto/396ecb_965ccf56aed247f7b4293d354c901385~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg/v1/fit/w_377,h_189,q_90,enc_avif,quality_auto/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg/v1/fit/w_754,h_378,q_90,enc_avif,quality_auto/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg/v1/fit/w_1131,h_567,q_90,enc_avif,quality_auto/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg/v1/fit/w_1508,h_756,q_90,enc_avif,quality_auto/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg/v1/fit/w_1885,h_945,q_90,enc_avif,quality_auto/396ecb_1988b4a05b574c58a7af506466f985a2~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg/v1/fit/w_377,h_566,q_90,enc_avif,quality_auto/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg/v1/fit/w_754,h_1132,q_90,enc_avif,quality_auto/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg/v1/fit/w_1131,h_1698,q_90,enc_avif,quality_auto/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg/v1/fit/w_1508,h_2264,q_90,enc_avif,quality_auto/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg/v1/fit/w_1885,h_2830,q_90,enc_avif,quality_auto/396ecb_76fc5c1a2d67408d9bd062c02e0ef407~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg/v1/fit/w_377,h_532,q_90,enc_avif,quality_auto/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg/v1/fit/w_754,h_1064,q_90,enc_avif,quality_auto/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg/v1/fit/w_1131,h_1596,q_90,enc_avif,quality_auto/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg/v1/fit/w_1508,h_2128,q_90,enc_avif,quality_auto/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg/v1/fit/w_1885,h_2660,q_90,enc_avif,quality_auto/396ecb_197c3a96407f47caba0635ffe8b86d8d~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg/v1/fit/w_377,h_566,q_90,enc_avif,quality_auto/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg/v1/fit/w_754,h_1132,q_90,enc_avif,quality_auto/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg/v1/fit/w_1131,h_1698,q_90,enc_avif,quality_auto/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg/v1/fit/w_1508,h_2264,q_90,enc_avif,quality_auto/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg/v1/fit/w_1885,h_2830,q_90,enc_avif,quality_auto/396ecb_02c468b2ed2c4d7cadb1e11cd600e874~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg/v1/fit/w_377,h_216,q_90,enc_avif,quality_auto/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg/v1/fit/w_754,h_432,q_90,enc_avif,quality_auto/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg/v1/fit/w_1131,h_648,q_90,enc_avif,quality_auto/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg/v1/fit/w_1508,h_864,q_90,enc_avif,quality_auto/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg/v1/fit/w_1885,h_1080,q_90,enc_avif,quality_auto/396ecb_45a4068895c643db8d8d14394cf1672b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg/v1/fit/w_377,h_212,q_90,enc_avif,quality_auto/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg/v1/fit/w_754,h_424,q_90,enc_avif,quality_auto/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg/v1/fit/w_1131,h_636,q_90,enc_avif,quality_auto/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg/v1/fit/w_1508,h_848,q_90,enc_avif,quality_auto/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg/v1/fit/w_1885,h_1060,q_90,enc_avif,quality_auto/396ecb_323aa6b1576e4d5ba36b71fc876b7fc3~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg/v1/fit/w_377,h_566,q_90,enc_avif,quality_auto/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg/v1/fit/w_754,h_1132,q_90,enc_avif,quality_auto/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg/v1/fit/w_1131,h_1698,q_90,enc_avif,quality_auto/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg/v1/fit/w_1508,h_2264,q_90,enc_avif,quality_auto/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg/v1/fit/w_1885,h_2830,q_90,enc_avif,quality_auto/396ecb_468af3ad2e2149f39dcd8e957bf527fc~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg/v1/fit/w_377,h_375,q_90,enc_avif,quality_auto/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg/v1/fit/w_754,h_750,q_90,enc_avif,quality_auto/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg/v1/fit/w_1131,h_1125,q_90,enc_avif,quality_auto/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg/v1/fit/w_1508,h_1500,q_90,enc_avif,quality_auto/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg/v1/fit/w_1885,h_1875,q_90,enc_avif,quality_auto/396ecb_23f27c24c9cd405899eab4c785206d4b~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg/v1/fit/w_377,h_353,q_90,enc_avif,quality_auto/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg/v1/fit/w_754,h_706,q_90,enc_avif,quality_auto/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg/v1/fit/w_1131,h_1059,q_90,enc_avif,quality_auto/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg/v1/fit/w_1508,h_1412,q_90,enc_avif,quality_auto/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg/v1/fit/w_1885,h_1765,q_90,enc_avif,quality_auto/396ecb_263846ee286a49b9b75b99d2764bf8de~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fill/w_380,h_570,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_250,h_250,q_30,blur_30,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.webp",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_250,h_250,q_30,blur_30,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_895,h_622,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_1790,h_1244,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_2685,h_1866,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_3580,h_2488,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg",
+    "https://static.wixstatic.com/media/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg/v1/fit/w_4475,h_3110,q_90,enc_avif,quality_auto/396ecb_f870638e21d3406897b3a1330f018c09~mv2.jpg"
+  ]
+}
