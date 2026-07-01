@@ -1,0 +1,75 @@
+﻿{
+  "theme": {
+    "brand": "Piller",
+    "primary": "#ffc400",
+    "background": "#050505",
+    "text": "#ffffff",
+    "cardBackground": "#111111",
+    "heroTitle": "Produtos Piller",
+    "heroSubtitle": "Catálogo editável com produtos, fotos, variações, medidas e informações técnicas."
+  },
+  "products": [
+    {
+      "id": "cadeado-20mm",
+      "name": "Cadeado 20mm",
+      "category": "Cadeados",
+      "subtitle": "Nível de segurança - 01",
+      "image": "",
+      "background": "#ffc400",
+      "description": "Atende a norma ABNT 15271.",
+      "details": [
+        "Matéria-Prima: Zamac 5 - Chave e gancho em aço ABNT 1010/1020.",
+        "Molas de aço inoxidável.",
+        "Pinos de segredo e contra pinos em latão.",
+        "Acabamento: E-Coalt latonado.",
+        "Lubrificar quando necessário com óleo mineral. Não utilizar grafite em pó.",
+        "Garantia de 5 anos para defeitos de fabricação."
+      ],
+      "variants": []
+    },
+    {
+      "id": "perfil-estreito-espelho-plano",
+      "name": "Perfil Estreito",
+      "category": "Linha Perfil",
+      "subtitle": "Espelho Plano | Maçaneta Bola",
+      "image": "",
+      "background": "#ffc400",
+      "description": "Produto com escolha de medida.",
+      "details": [],
+      "variants": [
+        {
+          "id": "20mm",
+          "label": "20 mm",
+          "title": "Perfil Estreito 20mm",
+          "subtitle": "Espelho Plano | Maçaneta Bola",
+          "image": "",
+          "description": "Versão 20mm.",
+          "details": [
+            "Aplicação: porta de alumínio e ferro externo.",
+            "Atende a norma NBR 14.913.",
+            "1.000 segredos.",
+            "Cilindro monobloco em ZAMAC 5.",
+            "Maçaneta em ZAMAC 5.",
+            "Testa e contratesta em aço inox AISI 430."
+          ]
+        },
+        {
+          "id": "28mm",
+          "label": "28 mm",
+          "title": "Perfil Estreito 28mm",
+          "subtitle": "Espelho Plano | Maçaneta Bola",
+          "image": "",
+          "description": "Versão 28mm.",
+          "details": [
+            "Aplicação: porta de alumínio e ferro externo.",
+            "Atende a norma NBR 14.913.",
+            "1.000 segredos.",
+            "Cilindro monobloco em ZAMAC 5.",
+            "Maçaneta em ZAMAC 5.",
+            "Testa e contratesta em aço inox AISI 430."
+          ]
+        }
+      ]
+    }
+  ]
+}
