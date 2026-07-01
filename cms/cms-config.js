@@ -1,4 +1,4 @@
 ﻿window.PILLER_CMS_CONFIG = {
-  supabaseUrl: "COLE_SUA_URL",
-  supabaseAnonKey: "COLE_SUA_ANON_KEY"
+  supabaseUrl: "https://tiqxbnybsrpukrsrgkvc.supabase.co",
+  supabaseAnonKey: "sb_publishable_PveORE3NPyXZ7a_EaQf8Uw_LVr1UJdP"
 };
