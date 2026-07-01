@@ -1,108 +1,119 @@
-﻿const DATA_URL = "./produtos-data.json";
-const STORE_KEY = "piller_produtos_editaveis_v1";
+﻿const STORE_KEY = "piller_produtos_identico_v2";
+const DATA_URL = "./produtos-data.json";
 
-let db = null;
+let db;
 let activeCategory = "Todos";
+let adminUnlocked = false;
+let logoClicks = 0;
+let adminTab = "comum";
 let editingId = null;
 
-const $ = (selector) => document.querySelector(selector);
+const $ = s => document.querySelector(s);
 
-function uid() {
-  return "id-" + Math.random().toString(36).slice(2) + Date.now().toString(36);
+function esc(v){
+  return String(v ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;");
 }
 
-function esc(value) {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;");
+function uid(){
+  return "p_" + Math.random().toString(36).slice(2) + Date.now().toString(36);
 }
 
-function normalizeProduct(p) {
-  return {
-    id: p.id || uid(),
-    name: p.name || "Produto sem nome",
-    category: p.category || "Produtos",
-    subtitle: p.subtitle || "",
-    image: p.image || "",
-    background: p.background || db.theme.primary,
-    description: p.description || "",
-    details: Array.isArray(p.details) ? p.details : [],
-    variants: Array.isArray(p.variants) ? p.variants : []
-  };
-}
-
-async function loadData() {
+async function load(){
   const local = localStorage.getItem(STORE_KEY);
-
-  if (local) {
+  if(local){
     db = JSON.parse(local);
-  } else {
-    const res = await fetch(DATA_URL);
-    db = await res.json();
+  }else{
+    db = await fetch(DATA_URL).then(r=>r.json());
   }
-
-  db.theme = db.theme || {};
-  db.products = (db.products || []).map(normalizeProduct);
-
-  applyTheme();
+  normalize();
   render();
 }
 
-function save() {
-  localStorage.setItem(STORE_KEY, JSON.stringify(db, null, 2));
+function normalize(){
+  db.theme ||= {};
+  db.products ||= [];
+  db.backups ||= [];
+  db.products = db.products.map(p => ({
+    id:p.id || uid(),
+    layout:p.layout || "cadeado",
+    name:p.name || "Produto",
+    category:p.category || "Produtos",
+    subtitle:p.subtitle || "",
+    extraSubtitle:p.extraSubtitle || "",
+    mainImage:p.mainImage || "",
+    lineLogo:p.lineLogo || "",
+    technicalImage:p.technicalImage || "",
+    details:Array.isArray(p.details) ? p.details : [],
+    variants:Array.isArray(p.variants) ? p.variants : []
+  }));
 }
 
-function applyTheme() {
-  document.documentElement.style.setProperty("--primary", db.theme.primary || "#ffc400");
-  document.documentElement.style.setProperty("--bg", db.theme.background || "#050505");
-  document.documentElement.style.setProperty("--text", db.theme.text || "#ffffff");
-  document.documentElement.style.setProperty("--card", db.theme.cardBackground || "#111111");
+function backup(reason){
+  db.backups ||= [];
+  db.backups.unshift({
+    id:uid(),
+    reason,
+    date:new Date().toISOString(),
+    products:structuredClone(db.products),
+    theme:structuredClone(db.theme)
+  });
+  db.backups = db.backups.slice(0,20);
 }
 
-function categories() {
-  return ["Todos", ...new Set(db.products.map(p => p.category).filter(Boolean))];
+function save(reason="alteração"){
+  backup(reason);
+  localStorage.setItem(STORE_KEY, JSON.stringify(db,null,2));
 }
 
-function visibleProducts() {
+function categories(){
+  return ["Todos", ...new Set(db.products.map(p=>p.category).filter(Boolean))];
+}
+
+function products(){
   return db.products.filter(p => activeCategory === "Todos" || p.category === activeCategory);
 }
 
-function render() {
-  applyTheme();
+function render(){
+  document.documentElement.style.setProperty("--yellow", db.theme.yellow || "#ffc400");
 
   $("#app").innerHTML = `
-    <header class="topbar">
-      <div class="nav">
-        <div class="brand">${esc(db.theme.brand || "Piller")}</div>
-        <div class="menu">
-          <a href="../index.html">Início</a>
-          <a href="../produtos/index.html">Produtos</a>
-          <button class="active" onclick="openAdmin()">Admin Produtos</button>
+    <div class="app-shell">
+      <header class="header">
+        <div class="header-inner">
+          <div class="logo" onclick="secretLogoClick()">
+            ${db.theme.logo ? `<img src="${esc(db.theme.logo)}">` : esc(db.theme.brand || "Piller")}
+          </div>
+          <nav class="nav">
+            <a href="../index.html">Início</a>
+            <a href="../institucional/index.html">Institucional</a>
+            <a href="../produtos/index.html">Produtos</a>
+            <a href="../representantes/index.html">Representantes</a>
+          </nav>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <section class="hero">
-      <h1>${esc(db.theme.heroTitle || "Produtos")}</h1>
-      <p>${esc(db.theme.heroSubtitle || "")}</p>
-    </section>
+      <main class="catalog">
+        <h1 class="catalog-title">Produtos</h1>
+        <p class="catalog-subtitle">Linha de produtos Piller. Clique em um produto para abrir a tela técnica no padrão visual da página oficial.</p>
 
-    <section class="filters">
-      ${categories().map(cat => `
-        <button class="filter ${cat === activeCategory ? "active" : ""}" onclick="setCategory('${esc(cat)}')">
-          ${esc(cat)}
-        </button>
-      `).join("")}
-    </section>
+        <div class="category-row">
+          ${categories().map(c => `
+            <button class="category-button ${c===activeCategory?"active":""}" onclick="setCategory('${esc(c)}')">${esc(c)}</button>
+          `).join("")}
+        </div>
 
-    <main class="grid">
-      ${visibleProducts().map(renderCard).join("")}
-    </main>
+        <section class="product-grid">
+          ${products().map(renderCard).join("")}
+        </section>
+      </main>
+    </div>
 
-    <div class="modal-backdrop" id="modal">
-      <button class="close" onclick="closeModal()">×</button>
+    <div class="modal" id="modal">
+      <button class="close" onclick="closeModal()"></button>
       <div id="modalContent"></div>
     </div>
 
@@ -110,350 +121,383 @@ function render() {
   `;
 }
 
-function renderCard(p) {
+function renderCard(p){
   return `
-    <article class="card">
-      <div class="card-image" style="background:${esc(p.background)}">
-        ${p.image ? `<img src="${esc(p.image)}" alt="${esc(p.name)}">` : `<div class="placeholder"></div>`}
+    <article class="product-card" onclick="openProduct('${esc(p.id)}')">
+      <div class="product-image">
+        ${p.mainImage ? `<img src="${esc(p.mainImage)}">` : `<div class="no-image"></div>`}
       </div>
-      <div class="card-body">
+      <div class="product-info">
         <div class="kicker">${esc(p.category)}</div>
-        <h3>${esc(p.name)}</h3>
-        <p>${esc(p.subtitle || p.description)}</p>
-        <div class="card-actions">
-          <button class="btn primary" onclick="openProduct('${esc(p.id)}')">Saiba Mais</button>
-          <button class="btn" onclick="editProduct('${esc(p.id)}')">Editar</button>
-        </div>
+        <h2>${esc(p.name)}</h2>
+        <p>${esc(p.subtitle || p.extraSubtitle || "Clique para ver detalhes técnicos.")}</p>
+        <button class="btn" onclick="event.stopPropagation();openProduct('${esc(p.id)}')">Saiba Mais</button>
       </div>
     </article>
   `;
 }
 
-function setCategory(cat) {
-  activeCategory = cat;
+function setCategory(c){
+  activeCategory = c;
   render();
 }
 
-function openProduct(id) {
-  const product = db.products.find(p => p.id === id);
-  if (!product) return;
+function openProduct(id){
+  const p = db.products.find(x=>x.id===id);
+  if(!p) return;
 
-  if (product.variants && product.variants.length) {
-    openVariantChoice(product);
-  } else {
-    openDetails(product, null);
+  if(p.layout === "perfil" && p.variants.length){
+    openPerfilChoice(p);
+    return;
   }
+
+  openCadeado(p);
 }
 
-function openVariantChoice(product) {
+function openCadeado(p){
   $("#modalContent").innerHTML = `
-    <section class="variant-screen">
-      <div class="variant-box">
-        <div class="variant-image">
-          ${product.image ? `<img src="${esc(product.image)}" alt="${esc(product.name)}">` : `<div class="placeholder"></div>`}
+    <section class="cadeado-screen">
+      <div class="cadeado-left">
+        <div class="cadeado-text">
+          <h1>${esc(p.name)}</h1>
+          <h2>${esc(p.subtitle)}</h2>
+          ${p.details.map(d=>`<p>${esc(d)}</p>`).join("")}
         </div>
-        <div class="variant-info">
-          <div class="kicker">${esc(product.category)}</div>
-          <h2>${esc(product.name)}</h2>
-          <h3>${esc(product.subtitle)}</h3>
-          <div class="variant-line"></div>
+      </div>
+
+      <div class="cadeado-right">
+        <div class="circle-img logo-circle">
+          ${p.lineLogo ? `<img src="${esc(p.lineLogo)}">` : `<span style="color:#000;font-weight:900">LINHA</span>`}
+        </div>
+        <div class="circle-img main-circle">
+          ${p.mainImage ? `<img src="${esc(p.mainImage)}">` : ""}
+        </div>
+        <div class="circle-img tech-circle">
+          ${p.technicalImage ? `<img src="${esc(p.technicalImage)}">` : ""}
+        </div>
+      </div>
+    </section>
+  `;
+  $("#modal").classList.add("open");
+}
+
+function openPerfilChoice(p){
+  $("#modalContent").innerHTML = `
+    <section class="perfil-screen">
+      <div class="perfil-box">
+        <div class="perfil-image">
+          <div class="perfil-image-inner">
+            ${p.mainImage ? `<img src="${esc(p.mainImage)}">` : `<div class="no-image"></div>`}
+          </div>
+        </div>
+
+        <div class="perfil-info">
+          <div class="kicker">Linha Perfil</div>
+          <h1>${esc(p.name)}</h1>
+          <h2>${esc(p.subtitle)}</h2>
+          <h3>${esc(p.extraSubtitle)}</h3>
+          <div class="yellow-line"></div>
           <div class="kicker">Escolha a medida</div>
-          <div class="variant-options">
-            ${product.variants.map(v => `
-              <button onclick="openDetailsByVariant('${esc(product.id)}','${esc(v.id)}')">
-                ${esc(v.label)}
-              </button>
+          <div class="option-row">
+            ${p.variants.map(v=>`
+              <button class="option-button" onclick="openVariant('${esc(p.id)}','${esc(v.id)}')">${esc(v.label)}</button>
             `).join("")}
           </div>
         </div>
       </div>
     </section>
   `;
-
   $("#modal").classList.add("open");
 }
 
-function openDetailsByVariant(productId, variantId) {
-  const product = db.products.find(p => p.id === productId);
-  const variant = product?.variants?.find(v => v.id === variantId);
-  if (!product || !variant) return;
-  openDetails(product, variant);
-}
-
-function openDetails(product, variant) {
-  const data = variant || product;
-  const image = data.image || product.image;
-  const details = data.details || product.details || [];
-
+function openVariant(pid, vid){
+  const p = db.products.find(x=>x.id===pid);
+  const v = p.variants.find(x=>x.id===vid);
   $("#modalContent").innerHTML = `
-    <section class="detail-screen">
-      <div class="detail-left" style="background:${esc(product.background || db.theme.primary)}">
-        <div class="detail-content">
-          <h2>${esc(data.title || product.name)}</h2>
-          <h3>${esc(data.subtitle || product.subtitle)}</h3>
-          <p><strong>${esc(data.description || product.description)}</strong></p>
-          <ul>
-            ${details.map(item => `<li>${esc(item)}</li>`).join("")}
-          </ul>
-        </div>
-      </div>
-
-      <div class="detail-right">
-        ${image ? `<img class="detail-main-image" src="${esc(image)}" alt="${esc(data.title || product.name)}">` : `<div class="detail-main-image"></div>`}
+    <section class="detail-panel">
+      <div class="detail-card">
+        <h1>${esc(v.title || p.name)}</h1>
+        <h2>${esc(v.subtitle || p.subtitle)} ${esc(v.extraSubtitle || p.extraSubtitle)}</h2>
+        ${v.mainImage ? `<img src="${esc(v.mainImage)}" style="max-height:330px;margin:0 auto 28px;object-fit:contain">` : ""}
+        <ul>${(v.details||[]).map(d=>`<li>${esc(d)}</li>`).join("")}</ul>
       </div>
     </section>
   `;
-
-  $("#modal").classList.add("open");
 }
 
-function closeModal() {
+function closeModal(){
   $("#modal").classList.remove("open");
 }
 
-function renderAdmin() {
+function secretLogoClick(){
+  logoClicks++;
+  setTimeout(()=>logoClicks=0,1800);
+  if(logoClicks >= 5){
+    logoClicks = 0;
+    const pass = prompt("Senha do painel:");
+    if(pass === (db.adminPassword || "piller123")){
+      adminUnlocked = true;
+      render();
+      $("#admin").classList.add("open");
+    }else{
+      alert("Senha incorreta.");
+    }
+  }
+}
+
+function renderAdmin(){
   return `
-    <aside class="admin" id="admin">
-      <div class="admin-head">
-        <strong>Painel de Produtos</strong>
-        <button onclick="closeAdmin()">Fechar</button>
-      </div>
-
-      <div class="admin-body">
-        <h3>Tema</h3>
-
-        <div class="field">
-          <label>Título</label>
-          <input id="themeHeroTitle" value="${esc(db.theme.heroTitle || "")}">
+    <aside class="admin ${adminUnlocked ? "" : "hidden"}" id="admin">
+      <div class="admin-box">
+        <div class="admin-head">
+          <strong>Painel Admin — Produtos</strong>
+          <button onclick="closeAdmin()">Fechar</button>
         </div>
 
-        <div class="field">
-          <label>Subtítulo</label>
-          <textarea id="themeHeroSubtitle">${esc(db.theme.heroSubtitle || "")}</textarea>
-        </div>
+        <div class="admin-body">
+          <div class="tabs">
+            <button class="${adminTab==="comum"?"active":""}" onclick="setAdminTab('comum')">Comum</button>
+            <button class="${adminTab==="avancado"?"active":""}" onclick="setAdminTab('avancado')">Avançado</button>
+            <button class="${adminTab==="backups"?"active":""}" onclick="setAdminTab('backups')">Backups</button>
+          </div>
 
-        <div class="field">
-          <label>Cor principal</label>
-          <input id="themePrimary" type="color" value="${esc(db.theme.primary || "#ffc400")}">
-        </div>
-
-        <button class="btn primary" onclick="saveTheme()">Salvar tema</button>
-
-        <hr>
-
-        <h3>${editingId ? "Editar produto" : "Cadastrar produto"}</h3>
-
-        <div class="field">
-          <label>Nome</label>
-          <input id="pName">
-        </div>
-
-        <div class="field">
-          <label>Categoria</label>
-          <input id="pCategory">
-        </div>
-
-        <div class="field">
-          <label>Subtítulo</label>
-          <input id="pSubtitle">
-        </div>
-
-        <div class="field">
-          <label>Descrição curta</label>
-          <textarea id="pDescription"></textarea>
-        </div>
-
-        <div class="field">
-          <label>Foto principal</label>
-          <input id="pImageFile" type="file" accept="image/*">
-        </div>
-
-        <div class="field">
-          <label>Ou URL/Base64 da foto</label>
-          <textarea id="pImage"></textarea>
-        </div>
-
-        <div class="field">
-          <label>Cor/fundo do produto</label>
-          <input id="pBackground" type="color" value="#ffc400">
-        </div>
-
-        <div class="field">
-          <label>Detalhes técnicos — 1 por linha</label>
-          <textarea id="pDetails"></textarea>
-        </div>
-
-        <div class="field">
-          <label>Opções/medidas em JSON</label>
-          <textarea id="pVariants" placeholder='[{"id":"20mm","label":"20 mm","title":"Produto 20mm","details":["Texto"]}]'></textarea>
-        </div>
-
-        <div class="admin-actions">
-          <button onclick="saveProduct()">Salvar produto</button>
-          <button onclick="resetForm()">Novo</button>
-          <button onclick="exportJson()">Exportar JSON</button>
-          <button onclick="importJson()">Importar JSON</button>
-        </div>
-
-        <hr>
-
-        <h3>Produtos cadastrados</h3>
-        <div class="admin-list">
-          ${db.products.map(p => `
-            <div class="admin-item">
-              <strong>${esc(p.name)}</strong><br>
-              <small>${esc(p.category)}</small>
-              <div class="admin-actions">
-                <button onclick="editProduct('${esc(p.id)}')">Editar</button>
-                <button onclick="deleteProduct('${esc(p.id)}')">Excluir</button>
-              </div>
-            </div>
-          `).join("")}
+          ${adminTab==="comum" ? renderCommonAdmin() : ""}
+          ${adminTab==="avancado" ? renderAdvancedAdmin() : ""}
+          ${adminTab==="backups" ? renderBackupAdmin() : ""}
         </div>
       </div>
     </aside>
   `;
 }
 
-function openAdmin() {
+function setAdminTab(tab){
+  adminTab = tab;
+  render();
   $("#admin").classList.add("open");
 }
 
-function closeAdmin() {
+function closeAdmin(){
   $("#admin").classList.remove("open");
 }
 
-function saveTheme() {
-  db.theme.heroTitle = $("#themeHeroTitle").value;
-  db.theme.heroSubtitle = $("#themeHeroSubtitle").value;
-  db.theme.primary = $("#themePrimary").value;
-  save();
-  render();
-  openAdmin();
+function renderCommonAdmin(){
+  const p = editingId ? db.products.find(x=>x.id===editingId) : null;
+  return `
+    <div class="admin-grid">
+      <div>
+        <h3>${p ? "Editar produto" : "Novo produto"}</h3>
+
+        <div class="field"><label>Nome</label><input id="name" value="${esc(p?.name || "")}"></div>
+        <div class="field"><label>Categoria</label><input id="category" value="${esc(p?.category || "")}"></div>
+        <div class="field"><label>Subtítulo</label><input id="subtitle" value="${esc(p?.subtitle || "")}"></div>
+        <div class="field"><label>Subtítulo extra</label><input id="extraSubtitle" value="${esc(p?.extraSubtitle || "")}"></div>
+        <div class="field"><label>Imagem principal</label><input type="file" id="mainImageFile" accept="image/*"></div>
+        <div class="field"><label>Detalhes — um por linha</label><textarea id="details">${esc((p?.details||[]).join("\n"))}</textarea></div>
+
+        <div class="admin-actions">
+          <button class="yellow" onclick="saveProduct()">Salvar com backup</button>
+          <button onclick="newProduct()">Novo baseado no layout</button>
+        </div>
+      </div>
+
+      <div>
+        <h3>Produtos</h3>
+        <div class="product-list">
+          ${db.products.map(x=>`
+            <div class="product-admin-item">
+              <strong>${esc(x.name)}</strong><br>
+              <small>${esc(x.category)} — ${esc(x.layout)}</small>
+              <div class="admin-actions">
+                <button onclick="editProduct('${esc(x.id)}')">Editar</button>
+                <button class="danger" onclick="deleteProduct('${esc(x.id)}')">Excluir</button>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    </div>
+  `;
 }
 
-function resetForm() {
+function renderAdvancedAdmin(){
+  const p = editingId ? db.products.find(x=>x.id===editingId) : null;
+  return `
+    <h3>Opções avançadas</h3>
+
+    <div class="field">
+      <label>Tipo de layout</label>
+      <select id="layout">
+        <option value="cadeado" ${p?.layout==="cadeado"?"selected":""}>Cadeado — tela amarela/preta</option>
+        <option value="perfil" ${p?.layout==="perfil"?"selected":""}>Perfil — escolha de medida</option>
+      </select>
+    </div>
+
+    <div class="field"><label>Logo da linha</label><input type="file" id="lineLogoFile" accept="image/*"></div>
+    <div class="field"><label>Imagem técnica</label><input type="file" id="technicalImageFile" accept="image/*"></div>
+
+    <div class="field">
+      <label>Variantes/opções em JSON</label>
+      <textarea id="variants">${esc(JSON.stringify(p?.variants || [], null, 2))}</textarea>
+    </div>
+
+    <div class="field">
+      <label>JSON completo do banco</label>
+      <textarea id="fullJson">${esc(JSON.stringify(db, null, 2))}</textarea>
+    </div>
+
+    <div class="admin-actions">
+      <button class="yellow" onclick="saveAdvanced()">Salvar avançado</button>
+      <button onclick="applyFullJson()">Aplicar JSON completo</button>
+      <button onclick="exportJson()">Exportar JSON</button>
+    </div>
+  `;
+}
+
+function renderBackupAdmin(){
+  return `
+    <h3>Backups locais</h3>
+    <div class="product-list">
+      ${(db.backups||[]).map(b=>`
+        <div class="product-admin-item">
+          <strong>${esc(b.reason)}</strong><br>
+          <small>${esc(new Date(b.date).toLocaleString())}</small>
+          <div class="admin-actions">
+            <button onclick="restoreBackup('${esc(b.id)}')">Restaurar</button>
+          </div>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
+function fileToBase64(input){
+  const file = input?.files?.[0];
+  if(!file) return Promise.resolve("");
+  return new Promise((resolve,reject)=>{
+    const r = new FileReader();
+    r.onload = () => resolve(r.result);
+    r.onerror = reject;
+    r.readAsDataURL(file);
+  });
+}
+
+function newProduct(){
   editingId = null;
+  adminTab = "comum";
   render();
-  openAdmin();
+  $("#admin").classList.add("open");
 }
 
-function editProduct(id) {
+function editProduct(id){
   editingId = id;
+  adminTab = "comum";
   render();
-  openAdmin();
-
-  const p = db.products.find(x => x.id === id);
-  if (!p) return;
-
-  $("#pName").value = p.name || "";
-  $("#pCategory").value = p.category || "";
-  $("#pSubtitle").value = p.subtitle || "";
-  $("#pDescription").value = p.description || "";
-  $("#pImage").value = p.image || "";
-  $("#pBackground").value = p.background || db.theme.primary || "#ffc400";
-  $("#pDetails").value = (p.details || []).join("\n");
-  $("#pVariants").value = JSON.stringify(p.variants || [], null, 2);
+  $("#admin").classList.add("open");
 }
 
-async function fileToBase64(input) {
-  const file = input.files?.[0];
-  if (!file) return "";
+async function saveProduct(){
+  const old = editingId ? db.products.find(x=>x.id===editingId) : null;
+  const image = await fileToBase64($("#mainImageFile"));
 
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = () => resolve(reader.result);
-    reader.onerror = reject;
-    reader.readAsDataURL(file);
-  });
-}
+  const product = {
+    id: old?.id || uid(),
+    layout: old?.layout || "cadeado",
+    name: $("#name").value.trim(),
+    category: $("#category").value.trim(),
+    subtitle: $("#subtitle").value.trim(),
+    extraSubtitle: $("#extraSubtitle").value.trim(),
+    mainImage: image || old?.mainImage || "",
+    lineLogo: old?.lineLogo || "",
+    technicalImage: old?.technicalImage || "",
+    details: $("#details").value.split("\n").map(x=>x.trim()).filter(Boolean),
+    variants: old?.variants || []
+  };
 
-async function saveProduct() {
-  let variants = [];
-
-  try {
-    const raw = $("#pVariants").value.trim();
-    variants = raw ? JSON.parse(raw) : [];
-  } catch {
-    alert("JSON das opções/medidas está inválido.");
+  if(!product.name){
+    alert("Informe o nome.");
     return;
   }
 
-  const uploadedImage = await fileToBase64($("#pImageFile"));
-  const image = uploadedImage || $("#pImage").value.trim();
+  const i = db.products.findIndex(x=>x.id===product.id);
+  if(i >= 0) db.products[i] = product;
+  else db.products.push(product);
 
-  const product = normalizeProduct({
-    id: editingId || uid(),
-    name: $("#pName").value.trim(),
-    category: $("#pCategory").value.trim(),
-    subtitle: $("#pSubtitle").value.trim(),
-    description: $("#pDescription").value.trim(),
-    image,
-    background: $("#pBackground").value,
-    details: $("#pDetails").value.split("\n").map(x => x.trim()).filter(Boolean),
-    variants
-  });
+  editingId = product.id;
+  save("Salvar produto: " + product.name);
+  localStorage.setItem(STORE_KEY, JSON.stringify(db,null,2));
+  render();
+  $("#admin").classList.add("open");
+}
 
-  if (!product.name) {
-    alert("Informe o nome do produto.");
+async function saveAdvanced(){
+  if(!editingId){
+    alert("Selecione um produto primeiro.");
     return;
   }
 
-  const index = db.products.findIndex(p => p.id === product.id);
+  const p = db.products.find(x=>x.id===editingId);
+  p.layout = $("#layout").value;
 
-  if (index >= 0) {
-    db.products[index] = product;
-  } else {
-    db.products.push(product);
+  const logo = await fileToBase64($("#lineLogoFile"));
+  const tech = await fileToBase64($("#technicalImageFile"));
+  if(logo) p.lineLogo = logo;
+  if(tech) p.technicalImage = tech;
+
+  try{
+    p.variants = JSON.parse($("#variants").value || "[]");
+  }catch{
+    alert("JSON de variantes inválido.");
+    return;
   }
 
-  editingId = null;
-  save();
+  save("Salvar avançado: " + p.name);
+  localStorage.setItem(STORE_KEY, JSON.stringify(db,null,2));
   render();
-  openAdmin();
+  $("#admin").classList.add("open");
 }
 
-function deleteProduct(id) {
-  if (!confirm("Excluir produto?")) return;
-  db.products = db.products.filter(p => p.id !== id);
-  save();
+function deleteProduct(id){
+  const p = db.products.find(x=>x.id===id);
+  if(!confirm("Excluir produto '" + p.name + "'? Um backup será criado antes.")) return;
+  save("Antes de excluir: " + p.name);
+  db.products = db.products.filter(x=>x.id!==id);
+  localStorage.setItem(STORE_KEY, JSON.stringify(db,null,2));
   render();
-  openAdmin();
+  $("#admin").classList.add("open");
 }
 
-function exportJson() {
-  const blob = new Blob([JSON.stringify(db, null, 2)], { type: "application/json" });
+function restoreBackup(id){
+  const b = db.backups.find(x=>x.id===id);
+  if(!b) return;
+  if(!confirm("Restaurar este backup?")) return;
+  db.products = structuredClone(b.products);
+  db.theme = structuredClone(b.theme);
+  localStorage.setItem(STORE_KEY, JSON.stringify(db,null,2));
+  render();
+  $("#admin").classList.add("open");
+}
+
+function applyFullJson(){
+  try{
+    const next = JSON.parse($("#fullJson").value);
+    if(!confirm("Aplicar JSON completo? Um backup será criado antes.")) return;
+    save("Antes de aplicar JSON completo");
+    db = next;
+    normalize();
+    localStorage.setItem(STORE_KEY, JSON.stringify(db,null,2));
+    render();
+    $("#admin").classList.add("open");
+  }catch{
+    alert("JSON inválido.");
+  }
+}
+
+function exportJson(){
+  const blob = new Blob([JSON.stringify(db,null,2)],{type:"application/json"});
   const a = document.createElement("a");
   a.href = URL.createObjectURL(blob);
   a.download = "produtos-data.json";
   a.click();
 }
 
-function importJson() {
-  const input = document.createElement("input");
-  input.type = "file";
-  input.accept = ".json,application/json";
-
-  input.onchange = () => {
-    const file = input.files[0];
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      try {
-        db = JSON.parse(reader.result);
-        db.products = (db.products || []).map(normalizeProduct);
-        save();
-        render();
-        openAdmin();
-      } catch {
-        alert("JSON inválido.");
-      }
-    };
-
-    reader.readAsText(file);
-  };
-
-  input.click();
-}
-
-loadData();
+load();
