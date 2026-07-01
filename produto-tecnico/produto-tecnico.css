@@ -1,0 +1,164 @@
+﻿:root{--yellow:#ffc400;--black:#000;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;background:#000;font-family:Arial,Helvetica,sans-serif;color:#fff}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+img{max-width:100%;display:block}
+
+.logo-hotspot{
+  position:fixed;
+  left:22px;
+  top:18px;
+  z-index:300;
+  color:var(--yellow);
+  font-weight:900;
+  font-size:26px;
+  user-select:none;
+}
+
+.close{
+  position:fixed;
+  top:24px;
+  right:32px;
+  z-index:300;
+  width:54px;
+  height:54px;
+  background:transparent;
+  border:0;
+}
+.close:before,.close:after{
+  content:"";
+  position:absolute;
+  left:25px;
+  top:0;
+  width:4px;
+  height:58px;
+  background:#fff;
+  border-radius:4px;
+}
+.close:before{transform:rotate(45deg)}
+.close:after{transform:rotate(-45deg)}
+
+.cadeado-screen{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:63% 37%;
+  background:#000;
+}
+.cadeado-left{
+  position:relative;
+  overflow:hidden;
+  background:var(--yellow);
+  color:#000;
+  padding:122px 70px 70px 22vw;
+}
+.cadeado-left:before{
+  content:"";
+  position:absolute;
+  left:-345px;
+  top:35px;
+  width:620px;
+  height:620px;
+  background:#000;
+  border-radius:50%;
+}
+.cadeado-text{
+  position:relative;
+  z-index:2;
+  max-width:690px;
+}
+.cadeado-text h1{
+  margin:0 0 18px;
+  font-size:clamp(46px,5.4vw,76px);
+  line-height:.95;
+  color:#000;
+  letter-spacing:-.04em;
+}
+.cadeado-text h2{
+  margin:0 0 28px;
+  font-size:34px;
+  color:#000;
+}
+.cadeado-text p{
+  margin:17px 0;
+  font-size:18px;
+  line-height:1.08;
+  font-weight:800;
+  color:#000;
+}
+.cadeado-right{
+  position:relative;
+  background:#000;
+  min-height:100vh;
+}
+.circle-img{
+  position:absolute;
+  background:#ededed;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.circle-img img{
+  width:84%;
+  height:84%;
+  object-fit:contain;
+}
+.main-circle{width:420px;height:420px;left:-115px;top:165px}
+.logo-circle{width:190px;height:190px;right:80px;top:50px}
+.tech-circle{width:250px;height:250px;right:70px;top:360px;background:var(--yellow)}
+
+.admin{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  display:none;
+  background:rgba(0,0,0,.82);
+  padding:28px;
+  overflow:auto;
+}
+.admin.open{display:block}
+.admin-box{
+  width:min(920px,100%);
+  margin:0 auto;
+  background:#fff;
+  color:#111;
+  border-radius:22px;
+  overflow:hidden;
+}
+.admin-head{
+  padding:18px 22px;
+  background:#111;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+}
+.admin-body{padding:22px}
+.field{display:grid;gap:6px;margin-bottom:13px}
+.field label{font-size:13px;font-weight:900}
+.field input,.field textarea{
+  width:100%;
+  border:1px solid #bbb;
+  border-radius:10px;
+  padding:10px;
+}
+.field textarea{min-height:90px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.actions button{
+  border:0;
+  border-radius:999px;
+  padding:10px 14px;
+  background:#111;
+  color:#fff;
+  font-weight:900;
+}
+.actions .yellow{background:var(--yellow);color:#000}
+
+@media(max-width:1050px){
+  .cadeado-screen{grid-template-columns:1fr}
+  .cadeado-left{padding:100px 35px 50px}
+  .cadeado-left:before{display:none}
+  .cadeado-right{min-height:520px}
+  .main-circle{left:50%;top:60px;transform:translateX(-50%)}
+}
